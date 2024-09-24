@@ -1,0 +1,34 @@
+\chapter{مفاهيم أساسية}
+
+\newpage
+
+\section{تعريف الزمرة}
+
+\begin{definition}
+	
+	يكون النظام الرياضي \((G, *)\) زمرة حيث \(G\) مجموعة غير خالية و \(*\) عملية ثنائية على \(G\) إذا تحقق ما يلي
+	
+	\begin{enumerate}
+		
+		\item الإنغلاق: \(\forall a, b \in G \Rightarrow a * b \in G\)
+		
+		\item التجميع: \(\forall a, b, c \in G\, (a * (b * c) = (a * b) * c)\)
+	\end{enumerate}
+	
+	
+	\begin{theorem}
+		
+		إذا كانت \((G, *)\) زمرة فإنه يوجد عنصر محايد وحيد و لكل عنصر يوجد نظير وجيد 
+		
+	\end{theorem}
+	
+	\begin{myproof}
+		نفرض أن \(e, e'\) عنصرين محاييدين في \((G, *)\) \\
+		بما أن \(e'\) عنصر محايد فإن \(a * e = e * a = a\) لكل \(a\in G\) و منه \(e * e' = e'\)
+		\begin{gather*}
+			\Rightarrow a * b = e \wedge a * c = e \Rightarrow a * b = a * c \\
+			\Rightarrow b * (a * b) = b * (a * c) \Rightarrow (b * a) * b = (b * a) * c
+		\end{gather*}
+	\end{myproof}
+	
+\end{definition}

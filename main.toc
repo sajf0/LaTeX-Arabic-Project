@@ -1,0 +1,6 @@
+\xpginauxfiletrue 
+\selectlanguage *{arabic}
+\contentsline {chapter}{\numberline {الفصل الأول }مفاهيم أساسية}{\LRE {٣}}{}%
+\contentsline {section}{\numberline {\LRE {١} - \LRE {١}}تعريف الزمرة}{\LRE {٤}}{}%
+\xpginauxfilefalse 
+\contentsfinish 
