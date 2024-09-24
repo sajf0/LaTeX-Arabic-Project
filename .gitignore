@@ -10,3 +10,5 @@
 *.pdf
 *.dvi
 *.ps
+*.bcf
+*.run.xml
