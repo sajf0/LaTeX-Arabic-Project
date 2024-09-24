@@ -7,7 +7,6 @@
 *.synctex.gz
 
 # Output files
-*.pdf
 *.dvi
 *.ps
 *.bcf
