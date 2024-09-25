@@ -11,7 +11,7 @@
 
 \RequirePackage{polyglossia}
 
-\RequirePackage[backend=biber]{biblatex} 
+\RequirePackage{biblatex} 
 
 \setmainlanguage{arabic}
 \setotherlanguage{english}
