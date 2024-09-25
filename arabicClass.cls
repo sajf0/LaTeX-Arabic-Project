@@ -11,7 +11,7 @@
 
 \RequirePackage{polyglossia}
 
-\RequirePackage{biblatex}
+\RequirePackage[backend=biber]{biblatex} 
 
 \setmainlanguage{arabic}
 \setotherlanguage{english}
@@ -119,6 +119,10 @@
 \newenvironment{myproof}{\noindent\textbf{البرهان}\vspace{5pt}\\ \noindent}{\hfill \(\qedsymbol\)}
 
 \newenvironment{solution}{\noindent\textbf{الحل}\vspace{5pt}\\}{}
+
+\renewcommand*\newunitpunct{\addcomma\space}
+\makeatletter
+\def\abx@comma{\ifdim\lastkern>\z@\unkern\fi\abx@puncthook{،}}
 
 \endinput
 

@@ -11,3 +11,7 @@
 *.ps
 *.bcf
 *.run.xml
+
+# References files
+*.bbl
+*.blg

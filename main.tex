@@ -1,5 +1,7 @@
 \documentclass{arabicClass}
 
+\addbibresource{references.bib}  
+
 \begin{document}
 	
 	\input{Title Page/titlepage.tex}
@@ -11,6 +13,10 @@
 	\input{chapter1.tex}
 	
 	\subchapter*{المراجع}
+	
+	\addcontentsline{toc}{chapter*}{المراجع}
+	\nocite{*}
+	\printbibliography[heading=none]
 	
 	
 \end{document}
