@@ -5,33 +5,66 @@
 
 \RequirePackage{geometry, graphicx}
 
-\RequirePackage{titlesec, titletoc}
+\RequirePackage{titletoc, titlesec}
+
+\RequirePackage{fancyhdr}
 
 \RequirePackage{amsmath, amssymb, amsthm}
 
 \RequirePackage{polyglossia}
 
 \RequirePackage{biblatex} 
+\DeclareFieldFormat[book]{title}{#1}
 
-\setmainlanguage{arabic}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{\thepage}
+\fancyhead[C]{\small \leftmark}
+\fancyhead[R]{\small \thechapter}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+
+\setmainlanguage[numerals=maghrib]{arabic}
 \setotherlanguage{english}
 
-\newfontfamily{\arabicfont}[Script=Arabic]{Amiri}
+\newfontfamily{\arabicfont}[Script=Arabic]{Times New Roman}
+
+\usepackage[T1]{fontenc}
+\usepackage{times}
 
 \newcommand{\ar}{\textarabic}
 \newcommand{\en}{\textenglish}
 
+\usepackage[lite, subscriptcorrection, zswash]{mtpro2}
 
-\titleformat{\chapter}[display]{\Huge\bfseries\centering}{\thechapter}{40pt}{\Huge\bfseries\centering}
+\makeatletter
+\def\@makechapterhead#1{%
+	\begin{center}
+		\vspace*{190pt}
+		\Huge\bfseries
+		\fbox{\parbox{1\textwidth}{\centering \thechapter\\[25pt]#1}} 
+		\vspace{20pt}
+	\end{center}
+	\thispagestyle{empty}   % No page number
+	\addtocounter{page}{-1} % Adjust page number
+	\cleardoublepage         % Start on a new page
+	\newpage
+}
 
-\titlespacing*{\chapter}{0pt}{150pt}{150pt}
+\def\@makeschapterhead#1{%
+	\vspace*{1cm}
+	{\centering\Large\bfseries #1\par}
+	\vspace{1cm}	
+}
+\makeatother
 
-\titleclass{\subchapter}{top}[\chapter]
-\newcounter{subchapter}
+\titleformat{\section}[block]
+{\bfseries\fontsize{14}{17}\selectfont} 
+{\thesection}{1em}{}  
 
-\titleformat{\subchapter}[display]{\Large\bfseries\centering}{\thechapter}{0pt}{\Large\bfseries\centering}
-
-\titlespacing*{\subchapter}{0pt}{0pt}{20pt}
+\titleformat{\subsection}[block]
+{\bfseries\fontsize{14}{17}\selectfont} 
+{\thesubsection}{1em}{}  
 
 \renewcommand{\thechapter}  {\ifnum\value{chapter}=1 الفصل الأول
 	\else
@@ -60,19 +93,16 @@
 
 \renewcommand{\thesubsection}{\arabic{chapter} - \arabic{section} - \arabic{subsection}}
 
-\renewcommand{\tableofcontents}{%
-	\begingroup
-	\let\clearpage\relax
-	\subchapter*{المحتويات}
-	\@starttoc{toc}
-	\endgroup
-}
-
 \titlecontents{chapter}[0em]{\bfseries\vspace{15pt}}{\thecontentslabel: }{}{\hfill}
 
 \titlecontents{chapter*}[0em]{\bfseries\vspace{15pt}}{}{}{\hfill\normalfont{\contentspage}}
 
 \titlecontents{section}[1em]
+{\normalfont}
+{\thecontentslabel\hspace*{5pt} }
+{}{\titlerule*[0.5pc]{.}\contentspage}
+
+\titlecontents{subsection}[1em]
 {\normalfont}
 {\thecontentslabel\hspace*{5pt} }
 {}{\titlerule*[0.5pc]{.}\contentspage}
@@ -85,7 +115,7 @@
 \newtheoremstyle{theoremstyle}
 {\topsep}
 {\topsep}
-{\itshape}
+{\normalfont}
 {}
 {\bfseries}
 {\vspace{5pt}\\}
@@ -123,6 +153,22 @@
 \renewcommand*\newunitpunct{\addcomma\space}
 \makeatletter
 \def\abx@comma{\ifdim\lastkern>\z@\unkern\fi\abx@puncthook{،}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\LL}{\mathcal{L}}
+
+% Define new math operators
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\arcsec}{arcsin}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arccot}{arccot}
+
+\renewcommand{\mathbf}[1]{\textbf{\en{#1}}}
 
 \endinput
 
